@@ -23,6 +23,7 @@ class RandomNumber(Base):
 
 class CsvFileVersion(Base):
     __tablename__ = 'csv_file_versions'
+    __table_args__ = {'extend_existing': True}
 
     id = Column(Integer, primary_key=True, index=True)
     file_path = Column(String, nullable=False)
