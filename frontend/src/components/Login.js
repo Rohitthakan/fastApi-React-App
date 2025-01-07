@@ -1,3 +1,4 @@
+import './duo.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -13,6 +14,10 @@ function Login() {
         try {
             const response = await axios.post('http://localhost:8000/auth/login/', formData);
             alert(response.data.message);
+
+            localStorage.setItem('username', formData.username);
+            console.log('useusername')
+
             window.location.href = '/dashboard';
         } catch (error) {
             setError(error.response.data.detail);

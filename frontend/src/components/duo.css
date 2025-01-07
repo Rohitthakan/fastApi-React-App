@@ -1,0 +1,60 @@
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Limit the maximum width */
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  input, button {
+    width: 100%; /* Full width for input fields */
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  input {
+    background-color: #222;
+    color: white;
+  }
+  
+  button {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #444;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+      width: 95%;
+    }
+  }

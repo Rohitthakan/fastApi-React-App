@@ -1,8 +1,10 @@
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
+from app.crud import get_csv_data, create_csv_entry, update_csv_entry, delete_csv_entry, create_backup
 from app.routes import router as user_router  
 from app.routes.dashboard import router as dashboard_router
 from app.routes.auth import router as auth_router
+from fastapi.responses import JSONResponse
 from . import crud, database
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
@@ -10,7 +12,7 @@ import random
 import csv
 from typing import List
 from pydantic import BaseModel
-from app.crud import get_csv_data, create_csv_entry, update_csv_entry, delete_csv_entry, create_backup
+
 
 
 
@@ -32,25 +34,30 @@ app.include_router(auth_router, prefix="/auth", tags=["auth"])
 
 @app.get("/")
 def root():
-    return {"message": "Welcome to the FastAPI Backend"}
+    endpoints = {
+        "Welcome to the FastAPI Backend": "/",
+
+        "Generate Random Numbers": "/dashboard/random-numbers/",
+        "Get Random Numbers": "/dashboard/get-random-numbers/",
+        "Fetch CSV": "/csv/fetch-csv/",
+        "Upload CSV": "/csv/upload-csv/",
+        "Update CSV Entry": "/csv/update-csv/{user_id}",
+        "Delete CSV Entry": "/csv/delete-csv/{user_id}",
+        "Get Previous CSV Version": "/csv/get-previous-version/",
+        "User Registration": "/user/register/",
+        "User Login": "/user/login/",
+        "Generate Random Numbers (CSV)": "/csv/generate-random-numbers/",
+        "Get Random Numbers (CSV)": "/csv/get-random-numbers/"
+    }
+    return JSONResponse(content=endpoints)
 
 
 @app.get("/dashboard/random-numbers/", response_model=List[dict])
 def get_random_numbers(db: Session = Depends(database.get_db)):
-    # Fetch random numbers using CRUD
+
     random_numbers = crud.get_random_numbers(db)
     
-    # Debug: Log the random numbers to the console
-    # print(f"Generated random numbers: {random_numbers}")
-    
-    # Return the random numbers
     return random_numbers
-
-
-
-
-
-
 
 
 
@@ -98,25 +105,15 @@ async def delete_csv(user_id: str):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# @app.get("/csv/get-previous-version/")
-# async def retrieve_csv():
-#     try:
-#         backup_file = create_backup()  # Create backup and get the file path
-#         return {"data": backup_file, "message": "Backup created successfully!"}  # Return file path and message
-#     except Exception as e:
-#         raise HTTPException(status_code=500, detail=str(e))
-
-
-
 @app.get("/csv/get-previous-version/")
 async def retrieve_csv():
     try:
-        # Create a backup first
-        backup_file = create_backup()  # This creates the backup
-        # Now read the CSV file and return its content
+        
+        backup_file = create_backup()  
+
         with open(backup_file, 'r') as file:
             reader = csv.DictReader(file)
-            data = [row for row in reader]  # Converts CSV rows into a list of dictionaries
+            data = [row for row in reader] 
         return {"data": data}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
