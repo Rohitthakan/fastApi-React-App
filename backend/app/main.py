@@ -49,7 +49,10 @@ def root():
         "Generate Random Numbers (CSV)": "/csv/generate-random-numbers/",
         "Get Random Numbers (CSV)": "/csv/get-random-numbers/"
     }
-    return JSONResponse(content=endpoints)
+    
+    formatted_endpoints = "\n".join([f"{key}: {value}" for key, value in endpoints.items()])
+    
+    return formatted_endpoints
 
 
 @app.get("/dashboard/random-numbers/", response_model=List[dict])
