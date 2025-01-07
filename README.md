@@ -31,29 +31,18 @@ This project is a full-stack application consisting of a **FastAPI backend** and
 - **Random Numbers**:
   - Generate random numbers and store them in the database
   - Retrieve the latest random numbers
-- **Endpoints**:
-  - `/register/`: User registration
-  - `/login/`: User login
-  - `/csv/fetch-csv/`: Fetch CSV data
-  - `/csv/upload-csv/`: Upload CSV data
-  - `/csv/update-csv/`: Update CSV entry
-  - `/csv/delete-csv/`: Delete CSV entry
-  - `/random-numbers/`: Fetch generated random numbers
-  - `/dashboard/random-numbers/`: Fetch random numbers for the dashboard
-  - `/dashboard/`: Main dashboard
-
 ---
 
 ### **Frontend Setup**
 
 1. Clone the frontend repository:
     ```bash
-    git clone https://github.com/your-username/frontend-repository.git
+    git clone https://github.com/Rohitthakan/fastApi-React-App.git
     ```
 
 2. Navigate into the project folder:
     ```bash
-    cd frontend-repository
+    cd frontend
     ```
 
 3. Install the required dependencies:
@@ -74,12 +63,12 @@ The frontend will be running at `http://localhost:3000/` by default.
 
 1. Clone the backend repository:
     ```bash
-    git clone https://github.com/your-username/backend-repository.git
+    git clone https://github.com/Rohitthakan/fastApi-React-App.git
     ```
 
 2. Navigate into the project folder:
     ```bash
-    cd backend-repository
+    cd backend
     ```
 
 3. Set up a Python virtual environment (if using `venv`):
