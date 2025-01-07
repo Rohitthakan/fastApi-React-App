@@ -33,6 +33,46 @@ This project is a full-stack application consisting of a **FastAPI backend** and
   - Retrieve the latest random numbers
 ---
 
+
+### **Setting Up the Virtual Environment**
+
+Before you start setting up the frontend or backend, it's a good practice to create a virtual environment to isolate the project dependencies. Here's how to do it:
+
+1. **Install `virtualenv` (if you don't have it already)**:
+    ```bash
+    pip install virtualenv
+    ```
+
+2. **Create a virtual environment**:
+    - On Windows:
+      ```bash
+      python -m venv venv
+      ```
+    - On macOS/Linux:
+      ```bash
+      python3 -m venv venv
+      ```
+
+3. **Activate the virtual environment**:
+    - On Windows:
+      ```bash
+      .\venv\Scripts\activate
+      ```
+    - On macOS/Linux:
+      ```bash
+      source venv/bin/activate
+      ```
+
+4. **Install the required dependencies**:
+    Once the virtual environment is activated, install the project dependencies from `requirements.txt`:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+Now your virtual environment is set up, and you can proceed with the frontend or backend setup.
+
+---
+
 ### **Frontend Setup**
 
 1. Clone the frontend repository:
