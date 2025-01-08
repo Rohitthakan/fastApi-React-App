@@ -13,7 +13,7 @@ import threading
 import queue
 
 
-CSV_FILE_PATH = 'backend_table.csv'
+CSV_FILE_PATH = 'backend/backend_table.csv'
 BACKUP_DIR = 'backups/'
 
     
