@@ -14,7 +14,7 @@ import queue
 
 
 CSV_FILE_PATH = 'backend/backend_table.csv'
-BACKUP_DIR = 'backups/'
+BACKUP_DIR = 'backend/backups/'
 
     
 random_number_queue = queue.Queue()
