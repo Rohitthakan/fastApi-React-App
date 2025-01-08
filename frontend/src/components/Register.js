@@ -12,7 +12,7 @@ function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/auth/register/', formData);
+            const response = await axios.post('https://fastapi-react-app.onrender.com/auth/register/', formData);
             if (response && response.data) {
                 alert(response.data.message);
                 window.location.href = '/login';  // Redirect to login page after successful registration
