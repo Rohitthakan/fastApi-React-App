@@ -21,7 +21,7 @@ app = FastAPI()
 # Add CORS middleware to allow frontend communication
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins; restrict this in production
+    allow_origins=["https://fast-api-react-app.vercel.app"],  # Allow all origins; restrict this in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
