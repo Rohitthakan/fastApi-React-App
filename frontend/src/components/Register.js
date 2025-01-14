@@ -30,6 +30,13 @@ function Register() {
 
     return (
         <div>
+            <a 
+                href="https://fastapi-react-app.onrender.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+            >
+                First, Start Backend Here!
+            </a>
             <h1>Register</h1>
             <form onSubmit={handleSubmit}>
                 <input
