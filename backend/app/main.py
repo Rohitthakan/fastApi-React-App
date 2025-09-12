@@ -5,6 +5,7 @@ from app.routes import router as user_router
 from app.routes.dashboard import router as dashboard_router
 from app.routes.auth import router as auth_router
 from fastapi.responses import JSONResponse
+from fastapi.responses import PlainTextResponse
 from . import crud, database
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
