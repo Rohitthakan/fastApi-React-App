@@ -32,7 +32,9 @@ app.include_router(user_router, prefix="/user")
 app.include_router(dashboard_router, prefix="/dashboard")
 app.include_router(auth_router, prefix="/auth", tags=["auth"])
 
-@app.get("/")
+# @app.get("/")
+@app.get("/", response_class=PlainTextResponse)
+@app.head("/", response_class=PlainTextResponse)
 def root():
     endpoints = {
         "Welcome to the FastAPI Backend": "/",
