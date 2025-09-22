@@ -13,7 +13,7 @@ function Dashboard() {
     // Fetch random numbers every second
     useEffect(() => {
         const interval = setInterval(() => {
-            axios.get('https://fastapi-react-app.onrender.com/dashboard/random-numbers/')
+            axios.get('https://fastapi-react-app-tren.onrender.com/dashboard/random-numbers/')
                 .then((response) => {
                     setRandomNumbers(response.data);
                 })
@@ -28,7 +28,7 @@ function Dashboard() {
     // Fetch CSV data
     const handleFetchCsv = async () => {
         try {
-            const response = await axios.get('https://fastapi-react-app.onrender.com/csv/fetch-csv/');
+            const response = await axios.get('https://fastapi-react-app-tren.onrender.com/csv/fetch-csv/');
             setCsvData(response.data.data);
         } catch (err) {
             setError(err.response.data.detail);
@@ -52,7 +52,7 @@ function Dashboard() {
 
     const handlePreviousVersion = async () => {
         try {
-            const response = await axios.get('https://fastapi-react-app.onrender.com/csv/get-previous-version/');
+            const response = await axios.get('https://fastapi-react-app-tren.onrender.com/csv/get-previous-version/');
             console.log(response.data); // Check the response structure
 
             if (Array.isArray(response.data.data)) {
