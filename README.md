@@ -148,7 +148,7 @@ The backend uses **SQLite** (or another database if specified). Ensure that the 
 ### **Deployment**
 
 - The frontend is hosted on **Vercel** at [Frontend Link](https://fast-api-react-app.vercel.app/).
-- The backend is hosted on **Render** at [Backend Link](https://fastapi-react-app-tren.onrender.com).
+- The backend is hosted on **Render** at [Backend Link](https://fastapi-react-app-tren.onrender.com/).
 
 ---
 
