@@ -12,7 +12,7 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://fastapi-react-app.onrender.com/auth/login/', formData);
+            const response = await axios.post('https://fastapi-react-app-tren.onrender.com/auth/login/', formData);
             alert(response.data.message);
 
             localStorage.setItem('username', formData.username);
